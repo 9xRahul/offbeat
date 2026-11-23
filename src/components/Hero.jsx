@@ -20,25 +20,15 @@ import {
 export default function Hero({ tripData, onOpenBooking }) {
   return (
     <section className="relative min-h-[92vh] lg:min-h-screen flex items-center justify-center pt-28 pb-16 lg:py-32 overflow-hidden bg-slate-950 text-white">
-      {/* Background Image - uncropped object-contain with ambient blurred fill */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden pointer-events-none">
-        {/* 1. Ambient blurred background layer to gently fill widescreen monitor edges */}
-        <img
-          src={tripData.media.poster}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover filter blur-3xl opacity-20 scale-125"
-        />
-
-        {/* 2. Main background image - strictly object-contain so it is NEVER cropped and 100% visible */}
+      {/* Background Image - stretched across entire screen and shown completely */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img
           src={tripData.media.poster}
           alt="OFFBEAT Mudippara trip"
-          className="w-full h-full object-contain object-center opacity-35 sm:opacity-45 max-h-[90vh] py-2 transition-all duration-700"
+          className="w-full h-full object-fill absolute inset-0 opacity-40 sm:opacity-50 transition-opacity duration-700"
         />
-
-        {/* 3. Smooth gradient overlays to guarantee text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-slate-900/40" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900/30 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-900/35" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900/25 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
