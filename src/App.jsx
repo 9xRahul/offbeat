@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import VideoSection from './components/VideoSection';
 import PillarsSection from './components/PillarsSection';
 import FacilitiesSection from './components/FacilitiesSection';
 import ItinerarySection from './components/ItinerarySection';
@@ -15,61 +16,64 @@ import Footer from './components/Footer';
 import { tripData } from './data/tripData';
 
 export default function App() {
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [isWhatsAppModalOpen, setIsWhatsAppModalOpen] = useState(false);
 
-  const handleOpenBooking = () => {
-    setIsBookingOpen(true);
+  const handleOpenWhatsApp = () => {
+    setIsWhatsAppModalOpen(true);
   };
 
-  const handleCloseBooking = () => {
-    setIsBookingOpen(false);
+  const handleCloseWhatsApp = () => {
+    setIsWhatsAppModalOpen(false);
   };
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-emerald-500 selection:text-white">
       {/* Top Navbar */}
-      <Navbar tripData={tripData} onOpenBooking={handleOpenBooking} />
+      <Navbar tripData={tripData} onOpenBooking={handleOpenWhatsApp} />
 
       {/* Main Page Flow */}
       <main>
         {/* Hero Section */}
-        <Hero tripData={tripData} onOpenBooking={handleOpenBooking} />
+        <Hero tripData={tripData} onOpenBooking={handleOpenWhatsApp} />
 
-        {/* 5 Core Pillars: Trekking, Sightseeing, Cultural, Camping, Disconnect */}
-        <PillarsSection tripData={tripData} onOpenBooking={handleOpenBooking} />
+        {/* Video & Official Poster Showcase Section */}
+        <VideoSection tripData={tripData} onOpenWhatsApp={handleOpenWhatsApp} />
+
+        {/* 4 Core Pillars: Trekking, Activities, Acoustic Night, Hidden Waterfall */}
+        <PillarsSection tripData={tripData} onOpenBooking={handleOpenWhatsApp} />
 
         {/* Facilities Provided: All Meals (BF, Lunch, Dinner), Good Rooms, Medical Aid */}
         <FacilitiesSection tripData={tripData} />
 
-        {/* 3-Day Starter Itinerary */}
-        <ItinerarySection tripData={tripData} onOpenBooking={handleOpenBooking} />
+        {/* 2-Day Mudippara Itinerary */}
+        <ItinerarySection tripData={tripData} onOpenBooking={handleOpenWhatsApp} />
 
-        {/* Why Starters: Side-by-side comparison */}
-        <StarterWhySection tripData={tripData} onOpenBooking={handleOpenBooking} />
+        {/* Why Starters: Refresh, Reconnect, Reset */}
+        <StarterWhySection tripData={tripData} onOpenBooking={handleOpenWhatsApp} />
 
         {/* Interactive Packing Checklist */}
         <PackingChecklist tripData={tripData} />
 
-        {/* High-res Photo Gallery (with demo replacement note) */}
+        {/* Photo Gallery */}
         <GallerySection tripData={tripData} />
 
-        {/* Community & Solo Traveler Reviews */}
+        {/* Community Reviews */}
         <ReviewsSection tripData={tripData} />
 
         {/* FAQs */}
-        <FAQSection tripData={tripData} onOpenBooking={handleOpenBooking} />
+        <FAQSection tripData={tripData} onOpenBooking={handleOpenWhatsApp} />
       </main>
 
       {/* Footer */}
-      <Footer tripData={tripData} onOpenBooking={handleOpenBooking} />
+      <Footer tripData={tripData} onOpenBooking={handleOpenWhatsApp} />
 
-      {/* Mobile Sticky Bottom Dock */}
-      <MobileStickyBar tripData={tripData} onOpenBooking={handleOpenBooking} />
+      {/* Mobile Sticky Bottom Dock with direct WhatsApp buttons */}
+      <MobileStickyBar tripData={tripData} onOpenBooking={handleOpenWhatsApp} />
 
-      {/* Multi-step Interactive Booking Modal */}
+      {/* Direct WhatsApp Quick Connect Modal */}
       <BookingModal
-        isOpen={isBookingOpen}
-        onClose={handleCloseBooking}
+        isOpen={isWhatsAppModalOpen}
+        onClose={handleCloseWhatsApp}
         tripData={tripData}
       />
     </div>

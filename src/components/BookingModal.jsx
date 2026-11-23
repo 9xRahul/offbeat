@@ -1,73 +1,24 @@
-import React, { useState } from 'react';
-import { 
-  X, 
-  Calendar, 
-  Users, 
-  Bed, 
-  Tent, 
-  ShieldCheck, 
-  Utensils, 
-  Check, 
-  ArrowRight, 
-  MessageSquare,
-  Sparkles, 
-  CheckCircle2, 
-  Phone
-} from 'lucide-react';
+import React from 'react';
+import { X, Calendar, MapPin, Phone, MessageSquare, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export default function BookingModal({ isOpen, onClose, tripData }) {
-  const [step, setStep] = useState(1);
-  const [selectedBatch, setSelectedBatch] = useState(tripData.batches[0].id);
-  const [stayPreference, setStayPreference] = useState('cottage');
-  const [travelerCount, setTravelerCount] = useState(1);
-  const [isSoloTraveler, setIsSoloTraveler] = useState(true);
-
-  // Traveler Details Form State
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    city: 'Bangalore',
-    dietPreference: 'veg',
-    medicalNotes: ''
-  });
-
-  const [enquirySubmitted, setEnquirySubmitted] = useState(false);
-
   if (!isOpen) return null;
 
-  const currentBatchObj = tripData.batches.find((b) => b.id === selectedBatch) || tripData.batches[0];
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmitEnquiry = (e) => {
-    e.preventDefault();
-    if (!formData.name || !formData.phone) {
-      alert("Please provide your name and WhatsApp phone number.");
-      return;
-    }
-    setEnquirySubmitted(true);
-    setStep(2);
-  };
-
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
-      <div className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 flex flex-col max-h-[92vh]">
-        {/* Modal Top Header - Single line clean title */}
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
+      <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 flex flex-col max-h-[92vh]">
+        {/* Modal Top Header */}
         <div className="px-5 py-4 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800 shrink-0">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">
+            <div className="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">
               OB
             </div>
             <div>
               <h3 className="font-bold font-display text-sm sm:text-base leading-tight">
-                {enquirySubmitted ? 'Enquiry Received!' : 'Trip Enquiry & Itinerary Request'}
+                Connect Directly on WhatsApp
               </h3>
               <p className="text-[11px] text-slate-400">
-                Offbeats Starter Trips • All meals, stays & medical aid included
+                Mudippara Trip • Dec 9, 10 • Instant Captain Chat
               </p>
             </div>
           </div>
@@ -79,251 +30,96 @@ export default function BookingModal({ isOpen, onClose, tripData }) {
           </button>
         </div>
 
-        {/* Modal Scrollable Body */}
+        {/* Modal Body */}
         <div className="p-5 sm:p-6 overflow-y-auto space-y-5">
-          {/* STEP 1: Form */}
-          {step === 1 && (
-            <form onSubmit={handleSubmitEnquiry} className="space-y-4">
-              {/* Batch Selector */}
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
-                  1. Interested Weekend Batch
-                </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {tripData.batches.map((b) => (
-                    <div
-                      key={b.id}
-                      onClick={() => setSelectedBatch(b.id)}
-                      className={`p-3 rounded-xl border cursor-pointer transition-all ${
-                        selectedBatch === b.id
-                          ? 'border-emerald-600 bg-emerald-50/60 shadow-sm ring-1 ring-emerald-600'
-                          : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold text-slate-900">{b.dates}</span>
-                        <span className="text-[10px] font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
-                          Enquiries Open
-                        </span>
-                      </div>
-                      <span className="text-[11px] text-slate-500 block mt-0.5">{b.label}</span>
-                    </div>
-                  ))}
-                </div>
+          {/* Trip Summary Card */}
+          <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2.5">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                Upcoming Trip
+              </span>
+              <span className="text-xs font-bold text-slate-900 bg-amber-100 px-2.5 py-0.5 rounded-full">
+                Rate: {tripData.rate}
+              </span>
+            </div>
+
+            <h4 className="font-bold font-display text-base text-slate-900">
+              OFFBEAT Mudippara Escape
+            </h4>
+
+            <div className="grid grid-cols-2 gap-2 text-xs text-slate-600 pt-1">
+              <div className="flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span className="font-semibold">{tripData.dateDisplay}</span>
               </div>
-
-              {/* Stay Preference */}
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
-                  2. Room / Stay Type
-                </label>
-                <div className="grid grid-cols-2 gap-2.5">
-                  <div
-                    onClick={() => setStayPreference('cottage')}
-                    className={`p-3 rounded-xl border cursor-pointer transition-all ${
-                      stayPreference === 'cottage'
-                        ? 'border-emerald-600 bg-emerald-50/60 ring-1 ring-emerald-600'
-                        : 'border-slate-200 hover:border-slate-300'
-                    }`}
-                  >
-                    <div className="flex items-center gap-2">
-                      <Bed className="w-4 h-4 text-emerald-600" />
-                      <div>
-                        <h4 className="font-bold text-xs text-slate-900">Hillside Room</h4>
-                        <span className="text-[10px] text-slate-500">Twin/Triple Sharing</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    onClick={() => setStayPreference('glamping')}
-                    className={`p-3 rounded-xl border cursor-pointer transition-all ${
-                      stayPreference === 'glamping'
-                        ? 'border-emerald-600 bg-emerald-50/60 ring-1 ring-emerald-600'
-                        : 'border-slate-200 hover:border-slate-300'
-                    }`}
-                  >
-                    <div className="flex items-center gap-2">
-                      <Tent className="w-4 h-4 text-teal-600" />
-                      <div>
-                        <h4 className="font-bold text-xs text-slate-900">Glamping Tent</h4>
-                        <span className="text-[10px] text-slate-500">Under Starlight</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Number of Wanderers & Solo option */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center">
-                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-700">Number of Wanderers</span>
-                  <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setTravelerCount(Math.max(1, travelerCount - 1))}
-                      className="w-7 h-7 rounded-lg bg-white border border-slate-300 font-bold text-xs hover:bg-slate-100 flex items-center justify-center"
-                      disabled={travelerCount <= 1}
-                    >
-                      -
-                    </button>
-                    <span className="font-bold text-xs text-slate-900 w-4 text-center">{travelerCount}</span>
-                    <button
-                      type="button"
-                      onClick={() => setTravelerCount(Math.min(10, travelerCount + 1))}
-                      className="w-7 h-7 rounded-lg bg-white border border-slate-300 font-bold text-xs hover:bg-slate-100 flex items-center justify-center"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-
-                <div
-                  onClick={() => setIsSoloTraveler(!isSoloTraveler)}
-                  className="p-3 rounded-xl bg-teal-50/50 border border-teal-200 cursor-pointer flex items-center gap-2"
-                >
-                  <div className={`w-4 h-4 rounded flex items-center justify-center border text-xs ${
-                    isSoloTraveler ? 'bg-teal-600 border-teal-600 text-white' : 'border-slate-300 bg-white'
-                  }`}>
-                    {isSoloTraveler && <Check className="w-3 h-3 stroke-[3]" />}
-                  </div>
-                  <span className="text-xs font-semibold text-teal-900">
-                    Traveling Solo? (65% wanderers are solo!)
-                  </span>
-                </div>
-              </div>
-
-              {/* Contact Details */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
-                    Your Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="e.g. Rahul"
-                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 text-xs sm:text-sm outline-none transition-all"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
-                    WhatsApp Number *
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    placeholder="e.g. 9876543210"
-                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 text-xs sm:text-sm outline-none transition-all"
-                  />
-                </div>
-              </div>
-
-              {/* Meal Preference */}
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Food Preference (Breakfast, Lunch & Dinner Included)
-                </label>
-                <div className="grid grid-cols-3 gap-2">
-                  {[
-                    { id: 'veg', label: 'Vegetarian' },
-                    { id: 'non-veg', label: 'Non-Vegetarian' },
-                    { id: 'jain', label: 'Jain Meal' },
-                  ].map((meal) => (
-                    <button
-                      key={meal.id}
-                      type="button"
-                      onClick={() => setFormData({ ...formData, dietPreference: meal.id })}
-                      className={`py-1.5 px-2 rounded-lg border text-xs font-semibold text-center transition-all ${
-                        formData.dietPreference === meal.id
-                          ? 'border-emerald-600 bg-emerald-50 text-emerald-800 ring-1 ring-emerald-600'
-                          : 'border-slate-200 text-slate-700 hover:bg-slate-50'
-                      }`}
-                    >
-                      {meal.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Submit Button */}
-              <div className="pt-2">
-                <button
-                  type="submit"
-                  className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-sm shadow-md flex items-center justify-center gap-2"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  <span>Send Trip Enquiry</span>
-                </button>
-                <p className="text-[11px] text-center text-slate-500 mt-2">
-                  No instant payment required. We will message you batch details & answer all questions!
-                </p>
-              </div>
-            </form>
-          )}
-
-          {/* STEP 2: Enquiry Confirmation */}
-          {step === 2 && (
-            <div className="text-center py-4 space-y-4">
-              <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center shadow-sm">
-                <CheckCircle2 className="w-8 h-8" />
-              </div>
-
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-600">
-                  Enquiry Successfully Sent
-                </span>
-                <h3 className="text-xl sm:text-2xl font-bold font-display text-slate-900 mt-1">
-                  Thank You, {formData.name || 'Wanderer'}!
-                </h3>
-                <p className="text-slate-600 text-xs sm:text-sm mt-1 max-w-sm mx-auto">
-                  We have received your interest for the <strong>{currentBatchObj.dates}</strong> batch.
-                </p>
-              </div>
-
-              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-left max-w-sm mx-auto text-xs space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Selected Batch:</span>
-                  <span className="font-bold text-slate-800">{currentBatchObj.dates}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Stay Type:</span>
-                  <span className="font-bold text-slate-800">
-                    {stayPreference === 'cottage' ? 'Hillside Room' : 'Glamping Tent'}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Dietary:</span>
-                  <span className="font-bold text-emerald-700">{formData.dietPreference} (BF, Lunch, Dinner)</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Medical Aid:</span>
-                  <span className="font-semibold text-slate-800">WFA Certified Lead Included</span>
-                </div>
-              </div>
-
-              <div className="p-3 bg-emerald-50 rounded-xl border border-emerald-200 text-xs text-emerald-800 max-w-sm mx-auto">
-                Our trip captain will connect with you on WhatsApp (<strong>{formData.phone}</strong>) with the complete itinerary PDF and answers to any questions.
-              </div>
-
-              <div className="pt-2">
-                <button
-                  type="button"
-                  onClick={onClose}
-                  className="px-6 py-2.5 rounded-xl bg-slate-900 text-white font-bold text-xs hover:bg-slate-800 transition-colors"
-                >
-                  Close & Explore Website
-                </button>
+              <div className="flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-teal-600 shrink-0" />
+                <span className="font-semibold">{tripData.location}</span>
               </div>
             </div>
-          )}
+
+            <p className="text-[11px] text-slate-500 pt-1 border-t border-slate-200">
+              Includes Trekking, Activities, Acoustic Night, Hidden Waterfall, All Meals (BF, Lunch & Dinner), Good Rooms & Medical Aid.
+            </p>
+          </div>
+
+          {/* Direct WhatsApp Action Buttons */}
+          <div className="space-y-3">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-600 block text-center">
+              Choose a Captain to Message on WhatsApp:
+            </span>
+
+            {tripData.whatsAppNumbers.map((wa, idx) => (
+              <a
+                key={idx}
+                href={wa.link}
+                target="_blank"
+                rel="noreferrer"
+                className="p-3.5 sm:p-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md flex items-center justify-between transition-all transform hover:-translate-y-0.5 group"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+                    <MessageSquare className="w-5 h-5" />
+                  </div>
+                  <div className="text-left">
+                    <span className="text-xs font-medium text-emerald-100 block">
+                      {wa.label}
+                    </span>
+                    <span className="text-base font-bold tracking-wide">
+                      {wa.phone}
+                    </span>
+                  </div>
+                </div>
+
+                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white text-emerald-800 group-hover:bg-emerald-50 transition-colors shrink-0">
+                  Chat Now →
+                </span>
+              </a>
+            ))}
+          </div>
+
+          {/* Quick Call Alternative */}
+          <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
+            <span className="text-xs text-slate-500 block mb-1.5">Prefer a direct phone call?</span>
+            <div className="flex items-center justify-center gap-4 text-xs font-bold text-emerald-700">
+              <a href="tel:+919074833849" className="hover:underline flex items-center gap-1">
+                <Phone className="w-3 h-3" /> 9074833849
+              </a>
+              <span className="text-slate-300">•</span>
+              <a href="tel:+919746584092" className="hover:underline flex items-center gap-1">
+                <Phone className="w-3 h-3" /> 9746584092
+              </a>
+            </div>
+          </div>
+
+          <div className="pt-1 text-center">
+            <button
+              onClick={onClose}
+              className="text-xs text-slate-400 hover:text-slate-600 font-semibold"
+            >
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>

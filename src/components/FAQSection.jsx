@@ -65,20 +65,23 @@ export default function FAQSection({ tripData, onOpenBooking }) {
             Talk to a real trip captain! We will answer any questions about trails, food, rooms, or solo traveler safety without any pressure.
           </p>
           <div className="mt-5 flex flex-wrap justify-center gap-3">
-            <button
-              onClick={onOpenBooking}
+            <a
+              href={tripData.whatsAppNumbers[0].link}
+              target="_blank"
+              rel="noreferrer"
               className="px-5 py-2.5 bg-white text-emerald-800 font-bold text-xs sm:text-sm rounded-full hover:bg-emerald-50 transition-colors shadow-md inline-flex items-center gap-1.5"
             >
               <MessageSquare className="w-4 h-4" />
-              <span>Enquire About Batches</span>
-            </button>
+              <span>WhatsApp: {tripData.whatsAppNumbers[0].phone}</span>
+            </a>
             <a
-              href="https://wa.me/?text=Hi%20Offbeats!%20I%20have%20questions%20about%20the%20starter%20trip."
+              href={tripData.whatsAppNumbers[1].link}
               target="_blank"
               rel="noreferrer"
-              className="px-5 py-2.5 bg-emerald-700/80 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm rounded-full border border-emerald-500 transition-colors inline-flex items-center gap-1.5"
+              className="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs sm:text-sm rounded-full border border-emerald-400 transition-colors inline-flex items-center gap-1.5"
             >
-              <span>Chat on WhatsApp</span>
+              <MessageSquare className="w-4 h-4" />
+              <span>WhatsApp: {tripData.whatsAppNumbers[1].phone}</span>
             </a>
           </div>
         </div>

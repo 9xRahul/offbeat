@@ -7,9 +7,15 @@ export default function GallerySection({ tripData }) {
 
   const galleryItems = [
     {
+      url: tripData.media.poster,
+      category: 'vibe',
+      title: 'Official Mudippara Trip Flyer',
+      desc: 'Dec 9, 10 • Refresh, Reconnect & Reset • Rate: 2500/-'
+    },
+    {
       url: tripData.images.trekking,
       category: 'trek',
-      title: 'Misty Valley Ridge Walk',
+      title: 'Mudippara Ridge Walk',
       desc: 'Gentle slope surrounded by rolling green hills'
     },
     {

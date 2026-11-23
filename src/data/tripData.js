@@ -1,20 +1,62 @@
 export const tripData = {
-  name: "Offbeats",
-  tagline: "The Ultimate Starter Escape: Cloud Trails, Bonfires & Good Folks",
-  heroSubtitle: "Leave city deadlines and burnout behind. A thoughtfully curated weekend journey for beginners and solo seekers to disconnect, hike easy misty peaks, camp under starlit skies, and meet like-minded friends.",
-  location: "Kudremukh Foothills & Chikmagalur Valleys",
-  duration: "3 Days / 2 Nights",
-  nextBatch: "Nov 29 - Dec 01",
-  pricePerPerson: 5499,
-  originalPrice: 7999,
-  rating: 4.94,
-  reviewCount: 348,
-  soloRatio: "65% Solo Wanderers",
-  difficulty: "Beginner Friendly (No prior trekking experience required)",
+  name: "OFFBEAT",
+  tagline: "For everyone who needs a Refresh, Reconnect & Reset",
+  motto: "Come as you are. Leave with a story.",
+  heroSubtitle: "Whether you're burnt out from work, studies, or daily life—join us to refresh amidst nature, reconnect with like-minded friends, and reset to dream bigger and feel truly alive.",
+  location: "Mudippara",
+  duration: "Dec 9, 10",
+  dateDisplay: "DEC 9, 10",
+  nextBatch: "Dec 9, 10",
+  rate: "2500/-",
+  pricePerPerson: 2500,
   
-  // High quality Unsplash demo images for testing (easily swapped by user)
+  // WhatsApp Booking Numbers from the official poster
+  whatsAppNumbers: [
+    {
+      phone: "9074833849",
+      formatted: "+91 9074833849",
+      label: "Booking Captain 1",
+      link: "https://wa.me/919074833849?text=Hi%20Offbeat!%20I'm%20interested%20in%20booking%20the%20Mudippara%20trip%20(Dec%209,10)"
+    },
+    {
+      phone: "9746584092",
+      formatted: "+91 9746584092",
+      label: "Booking Captain 2",
+      link: "https://wa.me/919746584092?text=Hi%20Offbeat!%20I'm%20interested%20in%20booking%20the%20Mudippara%20trip%20(Dec%209,10)"
+    }
+  ],
+
+  // 3 Core Pillars from the official flyer
+  threeRs: [
+    {
+      title: "Refresh",
+      desc: "Whether you're burnt out from work, studies or life..."
+    },
+    {
+      title: "Reconnect",
+      desc: "With new people, nature and yourself..."
+    },
+    {
+      title: "Reset",
+      desc: "To dream bigger, live lighter and feel alive..."
+    }
+  ],
+
+  rating: 4.96,
+  reviewCount: 380,
+  soloRatio: "65% Solo Travelers",
+  difficulty: "Beginner Friendly • All Welcome",
+
+  // Local media uploaded by the user
+  media: {
+    poster: "/assets/trip_image.jpeg",
+    video: "/assets/trip_video.mp4"
+  },
+
+  // Images for highlights, facilities and gallery
   images: {
-    hero: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80",
+    poster: "/assets/trip_image.jpeg",
+    hero: "/assets/trip_image.jpeg",
     trekking: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80",
     sightseeing: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=1000&q=80",
     cultural: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80",
@@ -27,297 +69,252 @@ export const tripData = {
     medical: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1000&q=80"
   },
 
-  // 5 Core Highlights of Offbeats
+  // 4 Core Highlights directly matching the official poster
   highlights: [
     {
       id: "trekking",
-      title: "Gentle Trekking",
-      badge: "Zero Rush",
+      title: "Trekking",
+      badge: "Mudippara Trail",
       icon: "Compass",
-      tagline: "Walk amidst clouds, not concrete",
-      description: "Designed strictly for beginners! 4-5 km panoramic trail through pine slopes, rolling grasslands, and babbling brooks with plenty of water and snack breaks.",
+      tagline: "Scenic ridge walk with panoramic mountain vistas",
+      description: "A gentle, scenic trek to Mudippara peak with panoramic cloud-valley views, fresh mountain air, and photo stops every 20 minutes. Zero rush and completely beginner-friendly.",
       features: [
-        "Experienced local pathfinder guides",
-        "Gentle ascents with photo stops every 20 mins",
-        "Trek poles & hydration support provided"
+        "Experienced local pathfinder captains",
+        "Gentle trail paced to everyone's comfort",
+        "Breathtaking 360-degree viewpoints over the hills"
       ],
       image: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=800&q=80"
     },
     {
-      id: "sightseeing",
-      title: "Offbeat Sightseeing",
-      badge: "No Tourist Traps",
-      icon: "MapPin",
-      tagline: "Hidden viewpoints only locals know",
-      description: "Skip overcrowded tourist spots. Visit secluded waterfalls tucked inside evergreen reserves, a secret sunset ridge, and a century-old organic coffee plantation.",
+      id: "activities",
+      title: "Activities & Icebreakers",
+      badge: "Fun & Chill",
+      icon: "HeartHandshake",
+      tagline: "Break the ice, play fun games, share laughs",
+      description: "Fun, engaging outdoor activities designed to help everyone feel included immediately. No awkward formal intros—just natural conversations, games, and shared laughter.",
       features: [
-        "Hidden cascading jungle waterfall dip",
-        "360° panoramic golden sunset ridge",
-        "Private heritage estate plantation walk"
+        "Engaging community icebreaker games",
+        "Team activities and creative challenges",
+        "Safe and friendly space where 65% come solo"
       ],
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80"
     },
     {
-      id: "cultural",
-      title: "Cultural & Acoustic Evenings",
+      id: "acoustic",
+      title: "Acoustic Night",
       badge: "Pure Soul",
       icon: "Music",
-      tagline: "Folk music, local folklore & warmth",
-      description: "As the sun dips below mountain folds, gather around the warm crackle of the campfire. Experience local folk percussion, acoustic guitar sing-alongs, and heart-to-heart storytelling.",
+      tagline: "Campfire, live acoustic jam & starlight stories",
+      description: "As dusk falls over Mudippara, sit around a crackling campfire for an unplugged acoustic jam session. Sing your favorite tunes, share stories, and soak in the starry night sky.",
       features: [
-        "Live campfire acoustic jam sessions",
-        "Traditional regional folklore & tribal rhythm",
-        "Starry open-mic & storytelling circle"
+        "Live acoustic guitar jam by the campfire",
+        "Storytelling and open-mic under the stars",
+        "Cozy bonfire warmth with evening snacks"
       ],
       image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
     },
     {
-      id: "camping",
-      title: "Starlight Camping",
-      badge: "Wilderness Comfort",
-      icon: "Tent",
-      tagline: "Sleep beneath a million constellations",
-      description: "Choose between alpine glamping tents or cozy wood-and-stone estate cottages. Surrounded by mist and birdsong, with warm duvets and safe enclosed campsite grounds.",
+      id: "waterfall",
+      title: "Hidden Waterfall",
+      badge: "Secret Spot",
+      icon: "MapPin",
+      tagline: "Natural freshwater pool dip tucked in the wild",
+      description: "Discover a secluded natural mountain waterfall away from typical tourist crowds. Dip your feet, splash around in clean natural spring water, and cool off with your fellow travelers.",
       features: [
-        "Spacious dual-layer waterproof tents & duvets",
-        "Surrounded by pine canopies and valley views",
-        "Safe, gated private estate campsite"
+        "Hidden freshwater waterfall safely accessible",
+        "Crystal clear stream and refreshing dip",
+        "Surrounded by lush untouched green canopy"
       ],
-      image: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: "community",
-      title: "Disconnect to Reconnect",
-      badge: "Mindful Vibe",
-      icon: "HeartHandshake",
-      tagline: "Ditch workplace burnout, find your tribe",
-      description: "65% of our travelers join solo! Zero pressure, no corporate talk, just fun icebreaker games, mindful morning forest tea, and genuine conversations with creators, introverts, and dreamers.",
-      features: [
-        "Thoughtful zero-awkwardness icebreaker games",
-        "Designated 'Phone Down, Look Up' sunset hour",
-        "Friendly trip captains ensuring everyone feels included"
-      ],
-      image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80"
     }
   ],
 
-  // Facilities Provided (Core prompt requirement: BF, Lunch, Dinner, Good rooms, Medical aid)
+  // Facilities Provided: BF, Lunch, Dinner, Good rooms, Medical aid
   facilities: [
     {
       id: "meals",
       category: "All Meals Included",
-      title: "Wholesome Farm-to-Table Dining",
+      title: "Wholesome Dining (BF, Lunch & Dinner)",
       badge: "Breakfast, Lunch & Dinner",
       icon: "Utensils",
-      summary: "Never worry about food. Every meal is freshly cooked by local homestay hosts using regional mountain produce.",
+      summary: "Never worry about food. Every meal is freshly cooked using regional mountain ingredients.",
       details: [
         {
           meal: "Hot Morning Breakfast",
-          desc: "Steaming traditional breakfast (Idlis, poha, parathas, cut fruits, boiled eggs, and estate-fresh filter coffee & chai)."
+          desc: "Fresh traditional breakfast (idlis/parathas, sambar, cut fruits, boiled eggs, and hot tea/coffee)."
         },
         {
           meal: "Energizing Mountain Lunch",
-          desc: "Wholesome regional lunch (fresh curries, local greens, warm rotis, fragrant rice, salad, and buttermilk) eaten amidst nature."
+          desc: "Wholesome regional feast eaten amidst nature with fresh vegetables, curries, rice, and buttermilk."
         },
         {
           meal: "Campfire Barbecue & Feast Dinner",
-          desc: "Evening barbecue snacks around the fire followed by a comforting buffet dinner with both Vegetarian & Non-Vegetarian specialties."
+          desc: "Bonfire snacks and barbecue followed by a comforting buffet dinner with both Veg & Non-Veg options."
         }
       ],
-      note: "Hygienic RO purified drinking water stations + unlimited refills throughout the trip. Special dietary requirements supported on request.",
+      note: "Pure RO drinking water available 24/7. Separate vegetarian and non-vegetarian preparation.",
       image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "rooms",
       category: "Stays & Rest",
       title: "Good Rooms & Mountain Stays",
-      badge: "Cleanliness Guaranteed",
+      badge: "Hygienic & Clean",
       icon: "BedDouble",
-      summary: "Rest well after a day in nature. Clean, spacious rooms with private washrooms and 24/7 hot water.",
+      summary: "Rest well after a day on the hills. Clean, spacious rooms with private washrooms and hot water.",
       details: [
         {
-          meal: "Deluxe Hillside Rooms / Cottages",
-          desc: "Comfortable twin & triple sharing rooms with plush bedding, clean linens, electric charging points, and private valley balconies."
+          meal: "Comfortable Hillside Rooms / Campsite",
+          desc: "Clean beds with cozy mattresses, fresh linens, and valley views over the mist."
         },
         {
-          meal: "Spotless Western Washrooms",
-          desc: "Deep-cleaned private and shared sanitised restrooms with geysers for hot water baths after cool trails."
+          meal: "Clean Attached Western Washrooms",
+          desc: "Sanitized restrooms with geysers for hot water baths after cool trails."
         },
         {
-          meal: "Glamping Option Available",
-          desc: "Want to try outdoor camping? Pitch in our weather-sealed Swiss canvas tents with foam mattresses and sleeping bags."
+          meal: "Camping & Starlight Option",
+          desc: "Weather-proof tents with sleeping bags for anyone who wants to camp under the stars."
         }
       ],
-      note: "Female solo traveler safety protocol: dedicated female trip marshals and secure lockable room options.",
+      note: "Solo traveler safe haven with female friendly captains and secure facilities.",
       image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "medical",
       category: "Safety & Well-being",
       title: "Certified Medical Aid & Support",
-      badge: "24/7 Trek Safety",
+      badge: "24/7 Safety",
       icon: "ShieldAlert",
-      summary: "Your safety is non-negotiable. Mountain-trained trip leads equipped for any starter emergency.",
+      summary: "Your well-being is our utmost priority. Mountain-trained leads equipped for any starter emergency.",
       details: [
         {
-          meal: "WFA Certified Trip Leaders",
-          desc: "Our captains hold Wilderness First Aid & CPR certifications from recognized mountaineering institutes."
+          meal: "Wilderness First Aid Leads",
+          desc: "Trip captains trained in wilderness first aid, emergency response, and trail support."
         },
         {
-          meal: "Comprehensive Medical Kit",
-          desc: "Emergency kit stocked with Pulse Oximeter, digital BP monitor, antiseptic dressings, cramp sprays, ORS, altitude & motion sickness meds."
+          meal: "Stocked Emergency Medical Kit",
+          desc: "Pulse oximeter, BP monitor, pain sprays, antiseptic dressings, ORS, and motion sickness medication."
         },
         {
-          meal: "Emergency Evacuation Protocol",
-          desc: "Dedicated standby local 4x4 rescue vehicle on ground and direct tie-ups with the nearest district hospital and clinic."
+          meal: "Standby Vehicle & Hospital Tie-up",
+          desc: "On-ground transport and direct connection with nearby medical clinics."
         }
       ],
-      note: "1:7 Leader-to-Traveler ratio so no one is left behind or unassisted.",
+      note: "Zero trekker left behind—we pace the group to the most relaxed hiker.",
       image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80"
     }
   ],
 
-  // Day-wise Itinerary
+  // 2-Day Mudippara Itinerary (Dec 9, 10)
   itinerary: [
     {
       day: 1,
-      title: "Arrival, Forest Valley Walk & Campfire Acoustic Night",
-      subtitle: "Unpack, unwind, and meet your travel family",
+      title: "Arrival, Forest Trail, Activities & Campfire Acoustic Night",
+      subtitle: "Dec 9 • Check-in, meet your travel buddies, and gather by the fire",
       time: "10:30 AM onwards",
       events: [
-        { time: "10:30 AM", title: "Campsite Check-in & Welcome Brew", desc: "Arrive at our lush estate. Check into your cozy room or glamping tent with a hot mug of Chikmagalur spiced tea." },
-        { time: "11:30 AM", title: "The 'No-Awkwardness' Icebreakers", desc: "Fun casual group games led by trip captains. No awkward formal intros—just easy laughs and nickname tags!" },
-        { time: "01:30 PM", title: "Traditional Malnad Lunch", desc: "Enjoy a hearty farm lunch with freshly sourced mountain vegetables and hot ghee rice." },
-        { time: "03:30 PM", title: "Hidden Brook & Pine Forest Stroll", desc: "An easy 2km acclimation walk under shaded pine trees to a gentle freshwater stream." },
-        { time: "06:30 PM", title: "Golden Hour Tea & Sunset Point", desc: "Watch the sky paint shades of peach and crimson over the distant ridges." },
-        { time: "08:00 PM", title: "Campfire, Acoustic Guitars & BBQ", desc: "Gather around the crackling bonfire. Live acoustic jam, folklore stories, barbecue skewers, and buffet dinner." }
+        { time: "10:30 AM", title: "Campsite Welcome & Refresh Brew", desc: "Arrive at Mudippara campsite. Welcome drink, room check-in, and settling in." },
+        { time: "11:30 AM", title: "Icebreaker Activities & Community Circle", desc: "Fun casual group games led by captains to get everyone talking and laughing." },
+        { time: "01:30 PM", title: "Hearty Traditional Lunch", desc: "Wholesome mountain meal cooked fresh with local greens and curries." },
+        { time: "03:30 PM", title: "Valley Stroll & Sunset Viewpoint", desc: "Gentle acclimation walk to a scenic rocky ridge for golden sunset panoramas." },
+        { time: "07:30 PM", title: "Campfire, Acoustic Night & BBQ Dinner", desc: "Unplugged acoustic guitar music around the crackling bonfire with dinner under constellations." }
       ],
-      mealsIncluded: ["Welcome Drink", "Lunch", "Hi-Tea & Snacks", "Barbecue & Dinner"]
+      mealsIncluded: ["Welcome Drink", "Lunch", "Evening Tea", "Dinner & BBQ"]
     },
     {
       day: 2,
-      title: "The Starter Trek, Waterfall Splash & Stargazing Circle",
-      subtitle: "The adventure day you'll be telling stories about",
+      title: "Mudippara Sunrise Trek, Hidden Waterfall & Farewell",
+      subtitle: "Dec 10 • Summit views, crystal water splash, and heading back refreshed",
       time: "06:30 AM onwards",
       events: [
-        { time: "06:30 AM", title: "Misty Sunrise & Fresh Breakfast", desc: "Wake up to bird chorus. Hot breakfast of piping idlis, eggs, toast, and freshly brewed estate coffee." },
-        { time: "08:00 AM", title: "Beginner-Friendly Ridge Trek", desc: "A scenic 4km gentle climb up the misty grassland ridge. Cloud formations, breathtaking valley lookouts, and plenty of photo breaks." },
-        { time: "11:30 AM", title: "Secret Forest Waterfall Plunge", desc: "Dip your feet or take a refreshing swim in a natural freshwater pool safely supervised by our guides." },
-        { time: "01:30 PM", title: "Stream-side Picnic Lunch", desc: "Enjoy warm meal packs by the cascading water while listening to the wind." },
-        { time: "04:30 PM", title: "Cultural Village Walk & Coffee Tasting", desc: "Visit a traditional heritage village, interact with native coffee growers, and sample honey-processed beans." },
-        { time: "08:00 PM", title: "Under-The-Stars Storytelling & Feast", desc: "Delicious dinner followed by starlit night session with laser constellation guide and deep conversations." }
+        { time: "06:30 AM", title: "Morning Birdsong & Hot Breakfast", desc: "Piping hot breakfast with fresh coffee and tea to energize for the morning trail." },
+        { time: "08:00 AM", title: "Mudippara Summit Trek", desc: "Gentle guided trek up the scenic Mudippara rocks with 360-degree views above the clouds." },
+        { time: "11:30 AM", title: "Hidden Waterfall Plunge", desc: "Cool off in a secluded natural freshwater pool safely supervised by our leads." },
+        { time: "01:30 PM", title: "Celebration Farewell Lunch", desc: "Final feast together, sharing photos, exchanging contacts, and group pictures." },
+        { time: "03:30 PM", title: "Departure with Recharged Energy", desc: "Head back home refreshed, reconnected, and reset!" }
       ],
-      mealsIncluded: ["Breakfast", "Trail Snacks", "Lunch", "Evening Tea", "Dinner"]
-    },
-    {
-      day: 3,
-      title: "Heritage Sightseeing, Souvenir Hunt & Farewell Hugs",
-      subtitle: "Take home fresh coffee, happy hearts, and lifelong friends",
-      time: "07:30 AM onwards",
-      events: [
-        { time: "07:30 AM", title: "Mindful Morning Stretch & Heavy Breakfast", desc: "Gentle breathwork amidst misty hills followed by a loaded breakfast feast." },
-        { time: "09:30 AM", title: "Heritage Sightseeing Excursion", desc: "Short scenic drive to an ancient mountain lookout and stone temple perched on the edge of the clouds." },
-        { time: "12:00 PM", title: "Local Market & Artisan Coffee Roast", desc: "Pick up hand-ground coffee beans, homemade chocolates, spices, and organic mountain honey." },
-        { time: "01:30 PM", title: "Grand Farewell Lunch & Group Polaroid", desc: "Final lunch together. Exchange contacts, sign the Offbeats travelers' guestbook, and receive your Offbeats souvenir pin!" },
-        { time: "03:30 PM", title: "Departure with a Recharged Heart", desc: "Head back to the city thoroughly refreshed, de-stressed, and connected." }
-      ],
-      mealsIncluded: ["Breakfast", "Hi-Tea", "Farewell Lunch"]
+      mealsIncluded: ["Breakfast", "Trail Snacks", "Farewell Lunch"]
     }
   ],
 
-  // Batches
-  batches: [
-    { id: "batch-1", dates: "Nov 29 - Dec 01, 2024", label: "Upcoming Weekend", spotsLeft: 3, status: "filling-fast" },
-    { id: "batch-2", dates: "Dec 06 - Dec 08, 2024", label: "Early Dec Breeze", spotsLeft: 6, status: "available" },
-    { id: "batch-3", dates: "Dec 13 - Dec 15, 2024", label: "Winter Cloud Batch", spotsLeft: 9, status: "available" },
-    { id: "batch-4", dates: "Dec 20 - Dec 22, 2024", label: "Holiday Special", spotsLeft: 4, status: "filling-fast" }
-  ],
-
-  // Why it's 100% Starter Friendly
   starterPillars: [
     {
-      title: "Zero Fitness Prerequisite",
-      desc: "If you can walk up 2 flights of stairs, you can easily complete this trip. No endurance marathon."
+      title: "Zero Experience Needed",
+      desc: "Designed specifically for first-time campers and hikers. Paced to the most relaxed traveler."
     },
     {
-      title: "Solo Traveler Safe Haven",
-      desc: "More than half of our wanderers sign up alone. By lunch on Day 1, everyone feels like old friends."
+      title: "65% Join Solo",
+      desc: "More than half of our wanderers join alone. By evening, everyone feels like old friends."
     },
     {
-      title: "Hygienic Western Toilets",
-      desc: "No digging holes in the wild! Clean, running hot water and sanitize-checked private washrooms."
+      title: "Clean Washrooms & Good Stays",
+      desc: "No uncomfortable compromises! Clean attached western washrooms with running hot water."
     },
     {
-      title: "Trained Trip Lead on Your Side",
-      desc: "Patient, welcoming captains who carry your extra water bottle if you feel tired. No one is ever left behind."
+      title: "Full Medical Support",
+      desc: "Wilderness First Aid certified leaders carry a full emergency kit on all trails."
     }
   ],
 
-  // Interactive Checklist for Starters
+  // Interactive Checklist
   packingList: [
     { id: "p1", category: "Apparel", item: "Comfortable trekking or sports shoes with good grip", required: true },
-    { id: "p2", category: "Apparel", item: "Light jacket / hoodie for chilly evening bonfires (15°C - 18°C)", required: true },
-    { id: "p3", category: "Apparel", item: "2 pairs of quick-dry t-shirts and track pants", required: true },
-    { id: "p4", category: "Gear", item: "Reusable 1-liter water bottle (save nature!)", required: true },
-    { id: "p5", category: "Gear", item: "Small 20-30L daypack for the trail", required: true },
-    { id: "p6", category: "Gear", item: "Power bank for charging phones/cameras", required: false },
-    { id: "p7", category: "Personal", item: "Personal medicines & insect repellent", required: true },
-    { id: "p8", category: "Personal", item: "Flip-flops for walking around the campsite", required: false }
+    { id: "p2", category: "Apparel", item: "Light jacket / hoodie for cool evening campfire (16°C - 20°C)", required: true },
+    { id: "p3", category: "Apparel", item: "2 pairs of comfortable t-shirts and track pants", required: true },
+    { id: "p4", category: "Gear", item: "Reusable water bottle for hydration", required: true },
+    { id: "p5", category: "Gear", item: "Small daypack for the trail and waterfall", required: true },
+    { id: "p6", category: "Personal", item: "Personal medicines & insect repellent", required: true },
+    { id: "p7", category: "Personal", item: "Power bank for phone & photos", required: false },
+    { id: "p8", category: "Personal", item: "Extra towel & clothes for waterfall dip", required: true }
   ],
 
-  // Testimonials
   testimonials: [
     {
-      name: "Aanya Sharma",
-      role: "Solo Traveler • UX Designer, Bangalore",
-      comment: "I was terrified to travel alone for the first time. Offbeats completely melted my anxiety! The rooms were squeaky clean, food was like home, and by Day 2 we were singing 90s songs around the fire. 10/10 starter experience!",
+      name: "Sneha Nair",
+      role: "First-Time Solo Wanderer, Kochi",
+      comment: "I was super nervous joining alone, but Offbeat made it so effortless. The acoustic campfire night was pure magic, and the waterfall dip was incredible. 10/10!",
       rating: 5,
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80",
-      batch: "Oct Batch"
+      batch: "Recent Trip"
     },
     {
-      name: "Rohan & Dev",
-      role: "First-Time Campers • Techies, Pune",
-      comment: "We work 12 hours a day and desperately needed to unplug from screens. The trek was super easy and so gorgeous. The food—especially the hot breakfast after the morning walk—was unforgettable.",
+      name: "Arjun & Kevin",
+      role: "IT Professionals, Bangalore",
+      comment: "Needed a hard reset from laptop screens. The Mudippara views and the campfire vibes completely recharged us. Food was delicious and piping hot!",
       rating: 5,
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
-      batch: "Nov Batch"
+      batch: "Recent Trip"
     },
     {
-      name: "Meera Krishnan",
-      role: "Solo Wanderer • Architect, Chennai",
-      comment: "The medical support and female safety protocols are genuine. Our captain noticed I was feeling slightly dizzy from the winding roads and immediately provided an electrolyte drink and acupressure help. Felt so safe!",
+      name: "Diya Thomas",
+      role: "Solo Traveler, Calicut",
+      comment: "The captains are so caring and friendly. Safe stays, spotless washrooms, and genuinely good people. Can't wait for the next trip!",
       rating: 5,
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
-      batch: "Oct Batch"
+      batch: "Recent Trip"
     }
   ],
 
-  // FAQs
   faqs: [
     {
-      q: "I have never trekked or camped before. Is this suitable for me?",
-      a: "Absolutely! Offbeats is specifically engineered as a 'Starter Trip'. The trails are gentle (around 4 km with frequent rest stops), our guides pace the group to the slowest hiker, and tents/rooms come pre-pitched with clean mattresses and blankets. No prior experience is needed."
+      q: "When is the Mudippara trip taking place?",
+      a: "The upcoming Mudippara trip takes place on DEC 9 & 10. You can reach out directly to either of our booking WhatsApp numbers (+91 9074833849 or +91 9746584092) to secure your spot."
     },
     {
-      q: "Are the meals really included? What kind of food is served?",
-      a: "Yes, all meals from Day 1 lunch to Day 3 lunch are 100% included (Breakfast, Lunch, Dinner, plus evening tea and campfire snacks). Food is prepared fresh by local estate hosts featuring delicious regional vegetarian dishes, plus chicken/egg options for dinner."
+      q: "What is included in the ₹2500/- rate?",
+      a: "The ₹2500/- rate includes guided trekking to Mudippara summit, group activities & icebreakers, campfire acoustic night, hidden waterfall dip, all meals (breakfast, lunch, dinner & campfire snacks), comfortable stays, and medical aid support."
     },
     {
-      q: "How are the rooms and bathroom facilities?",
-      a: "We believe adventure shouldn't mean poor hygiene. You stay in comfortable hillside cottage rooms or luxury glamping tents with proper beds. All rooms have clean Western-style attached washrooms with hot water geysers."
+      q: "I am coming solo. Will I feel left out?",
+      a: "Not at all! Over 65% of our travelers join solo. We start with friendly, zero-awkwardness icebreaker games, and by lunchtime everyone is comfortable and bonding."
     },
     {
-      q: "What medical assistance is available if someone gets injured or sick?",
-      a: "Every batch is accompanied by Wilderness First-Aid certified leaders. We carry a comprehensive med kit (pain relief, allergy meds, ORS, antiseptic, sprain wraps, pulse oximeter). In case of any serious need, our 4x4 backup vehicle connects to the district hospital within 25 minutes."
+      q: "How do I book for Dec 9, 10?",
+      a: "Booking is directly handled via WhatsApp with zero hassle! Simply tap either of the WhatsApp buttons (9074833849 / 9746584092) to chat with our trip captains."
     },
     {
-      q: "Can I join as a solo traveler? Will I feel awkward?",
-      a: "Over 60% of our travelers join solo! From the moment you arrive, our captains introduce fun, non-intrusive icebreakers that break the tension naturally. You'll never eat alone or feel out of place."
-    },
-    {
-      q: "What is the cancellation or batch reschedule policy?",
-      a: "We understand that work schedules change! You can reschedule your trip to any upcoming weekend batch up to 5 days before departure with zero penalty, or easily transfer your booking to a friend."
+      q: "What medical assistance is available?",
+      a: "Our trip captains are trained in wilderness first aid and carry an emergency medical kit (pain relief, antiseptic, oximeter, allergy meds, ORS) on all trails with an emergency backup vehicle."
     }
   ]
 };

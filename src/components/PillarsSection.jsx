@@ -123,14 +123,14 @@ export default function PillarsSection({ tripData, onOpenBooking }) {
                 <div className="mt-8 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center gap-2 text-xs text-slate-500">
                     <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                    <span>All-inclusive in our starter trip package</span>
+                    <span>All-inclusive in our {tripData.location} trip package</span>
                   </div>
                   <button
                     onClick={onOpenBooking}
                     className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-emerald-700 hover:text-emerald-800 group"
                   >
                     <MessageSquare className="w-3.5 h-3.5" />
-                    <span>Enquire About Batches</span>
+                    <span>WhatsApp To Book</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
@@ -155,8 +155,8 @@ export default function PillarsSection({ tripData, onOpenBooking }) {
           );
         })()}
 
-        {/* 5-Card Quick Grid for fast scanning - properly aligned */}
-        <div className="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+        {/* 4-Card Quick Grid for fast scanning - properly aligned */}
+        <div className="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
           {tripData.highlights.map((item, idx) => (
             <div
               key={item.id}
@@ -165,7 +165,7 @@ export default function PillarsSection({ tripData, onOpenBooking }) {
                 activeTab === idx
                   ? 'bg-emerald-50 border-emerald-300 shadow-sm ring-1 ring-emerald-300'
                   : 'bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50'
-              } ${idx === 4 ? 'col-span-2 sm:col-span-1' : ''}`}
+              }`}
             >
               <div className="flex items-center justify-between mb-2">
                 <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs ${

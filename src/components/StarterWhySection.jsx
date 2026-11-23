@@ -118,7 +118,7 @@ export default function StarterWhySection({ tripData, onOpenBooking }) {
               className="px-6 sm:px-8 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold text-xs sm:text-sm rounded-full shadow-md transition-all inline-flex items-center gap-2"
             >
               <MessageSquare className="w-4 h-4" />
-              <span>Enquire About Upcoming Batches</span>
+              <span>WhatsApp to Book Dec 9, 10</span>
             </button>
           </div>
         </div>

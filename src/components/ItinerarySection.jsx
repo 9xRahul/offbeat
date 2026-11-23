@@ -22,29 +22,30 @@ export default function ItinerarySection({ tripData, onOpenBooking }) {
             Effortless Flow
           </span>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-display tracking-tight">
-            The 3-Day Starter Itinerary
+            The Mudippara Weekend Itinerary
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed">
-            A relaxed balance of gentle morning outdoor activities, peaceful afternoons, and lively campfire evenings. No 4 AM forced alarms or grueling rushes.
+            Dec 9 & 10 • A relaxed balance of scenic mountain trails, engaging group activities, acoustic campfire night, and a refreshing waterfall plunge.
           </p>
         </div>
 
         {/* Day Selectors - properly centered and aligned */}
-        <div className="mt-8 sm:mt-12 flex justify-center gap-2 sm:gap-4 max-w-xl mx-auto">
+        <div className="mt-8 sm:mt-12 flex justify-center gap-2 sm:gap-4 max-w-md mx-auto">
           {tripData.itinerary.map((day) => (
             <button
               key={day.day}
               onClick={() => setSelectedDay(day.day)}
-              className={`flex-1 py-3 px-3 sm:px-4 rounded-2xl border text-center transition-all duration-200 ${selectedDay === day.day
+              className={`flex-1 py-3 px-3 sm:px-4 rounded-2xl border text-center transition-all duration-200 ${
+                selectedDay === day.day
                   ? 'bg-emerald-600 border-emerald-600 text-white shadow-md shadow-emerald-600/25 scale-[1.02]'
                   : 'bg-white border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-100/80'
-                }`}
+              }`}
             >
               <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-90">
-                Day 0{day.day}
+                Day 0{day.day} • {day.day === 1 ? 'Dec 9' : 'Dec 10'}
               </div>
               <div className="font-display font-bold text-xs sm:text-sm mt-0.5 truncate">
-                {day.day === 1 ? 'Arrival & Camp' : day.day === 2 ? 'Trail & Falls' : 'Heritage & Home'}
+                {day.day === 1 ? 'Arrival & Campfire' : 'Summit & Waterfall'}
               </div>
             </button>
           ))}
@@ -127,10 +128,10 @@ export default function ItinerarySection({ tripData, onOpenBooking }) {
               </div>
               <button
                 onClick={onOpenBooking}
-                className="w-full sm:w-auto px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs sm:text-sm font-semibold shadow-sm transition-all flex items-center justify-center gap-1.5"
+                className="w-full sm:w-auto px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs sm:text-sm font-semibold shadow-sm transition-all flex items-center justify-center gap-1.5"
               >
                 <MessageSquare className="w-3.5 h-3.5" />
-                <span>Enquire About Batches</span>
+                <span>WhatsApp to Book</span>
               </button>
             </div>
           </div>
